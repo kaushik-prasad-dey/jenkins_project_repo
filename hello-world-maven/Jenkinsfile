@@ -11,14 +11,16 @@ pipeline {
             steps {
                 // Build your application here
                 withMaven(maven: 'Maven3') {
-            sh "mvn clean package"
-        }
+                     sh "mvn install"
+                }
             }
         }
         stage('Test') {
             steps {
                 // Run your tests here
-                sh 'mvn test' // Example for a Maven project
+                withMaven(maven: 'Maven3') {
+                    sh 'mvn test' // Example for a Maven project    
+                }
             }
         }
     }
