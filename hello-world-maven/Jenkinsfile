@@ -4,7 +4,7 @@ pipeline {
         stage('Fetch Code') {
             steps {
                 // Check out your source code from your version control system (e.g., Git)
-                git branch: 'master', url:'https://github.com/edureka-git/DevOpsClassCodes.git'
+                git branch: 'main', url:'https://github.com/kaushik-prasad-dey/jenkins_project_repo.git'
             }
         }
         stage('Build') {
